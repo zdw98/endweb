@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>电视剧</title>
+        <link rel="stylesheet" href="./site.css" type="text/css">
+        
+        <script src="./js/animate.js">
+        </script>
+        <style>
+          .box{
+            width:1200px;
+            height:380px;
+            border:1px solid red;
+            margin:100px auto;
+            position:relative;
+            overflow:hidden;
+    
+          }
+          .slider{
+            width:8400px;
+            position:absolute;
+            left:-1200px;
+          }
+          .slide{
+            width:1200px;
+            overflow:hidden;
+            float:left;
+          }
+          .box > span{
+            display:block;
+            width:30px;
+            height:50px;
+            text-align:center;
+            cursor:pointer;
+            top:175px;
+            line-height:50px;
+            background:rgb(255,0,0);
+            font-size:30px;
+            position:absolute;
+            opacity:0;
+          }
+          #left{
+            left:30px;
+          }
+          #right{
+            right:30px;
+          }
+          .nav{
+            position:absolute;
+            left:500px;
+            bottom:5px;
+          }
+          ul li{
+            list-style: none;
+          }
+          .nav>li{
+            float:left;
+            width:30px;
+            height:30px;
+            background:#ccc;
+            cursor:pointer;
+            margin:0 10px;
+            border-radius:50%;
+            text-align:center;
+          }
+          .nav .active{
+            background:red;
+          }
+          .top{
+            width:100%;
+            margin: 0;
+            padding: 0;
+            box-sizing:border-box;
+            background:#ccc;
+          }
+          body{
+            margin:0
+          }
+          .temp{
+            display:inline;
+            width:216px;
+            height:100px;
+            background:#ccc;
+            position:relative;
+            z-index:333 !important;
+          }
+          .temp img{
+            margin-left:300px;
+          }
+          .boxtop {
+            width: 1200px;;
+            margin: 0 auto;
+            display:inline;
+            overflow: hidden;
+          }
+          .animate {
+            position:relative;
+            padding-left: 20px;
+            font-size: 12px;
+            color: red;
+            display: inline-block;
+            white-space: nowrap;
+            animation: 10s wordsLoop linear infinite normal;
+            z-index:1;
+          }
+    
+          @keyframes wordsLoop {
+              0% {
+                  transform: translateX(100%);
+                  -webkit-transform: translateX(100%);
+              }
+              100% {
+                  transform: translateX(-100%);
+                  -webkit-transform: translateX(-100%);
+              }
+          }
+        </style>
+    </head>
+    <body class="sg-w980">
+    <!--Header--> 
+    
+    <div id="header">
+        <div class="header_sub">
+            <div class="search">
+                <form action="javascript:;">
+                    <div class="search_bg">
+                        <input type="text">
+                    </div>
+                    <div><button style="height: 40px;width: 60px">搜索</button></div>
+                    <a href="javascript:;" class="search_btn ct" id="search"></a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- 轮播图 -->
+    <div class="box" id="box">
+        <div class="slider" id="slider">
+          <div class="slide">
+            <img src="./img/b5.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./img/b1.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./img/b2.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./img/b3.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./img/b4.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./img/b5.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./img/b1.png" alt="">
+          </div>
+        </div>
+        <span id="left"></span>
+        <span id="right">></span>
+        <ul class="nav" id="nav">
+          <li class="active">1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+        </ul>
+    </div>
+    
+    <div class="filter_area" pbflag="wc_0_分类">
+        <div class="area cf f_row_5">
+            <dl>
+                <dt>按类型</dt>
+                <dd>
+                    <a>青春</a>
+                    <a>家庭</a>
+                    <a>军旅</a>
+                    <a>言情</a>
+                    <a>古装</a>
+                    <a>武侠</a>
+                    <a>偶像</a>
+                    <a>其他</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>按地区</dt>
+                <dd>
+                    <a>内地</a>
+                    <a>香港</a>
+                    <a>台湾</a>
+                    <a>韩国</a>
+                    <a>日本</a>
+                    <a>其他</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>按明星</dt>
+                <dd>
+                    <a>赵丽颖</a>
+                    <a>李易峰</a>
+                    <a>孙俪</a>
+                    <a>钟汉良</a>
+                    <a >杨幂</a>
+                    <a>赵又廷</a>
+                    <a>冯绍峰</a>
+                    <a>杨洋</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>按年份</dt>
+                <dd class="year">
+                    <a>2019</a>
+                    <a>2018</a>
+                    <a>2017</a>
+                    <a>2016</a>
+                    <a>更早</a>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    
+    <!-- 具体内容 -->
+    <div class="wd-module cf tele-bb-content">
+        <div class="wd-left-m">
+            <!-- 大家都在看 -->
+            <div class="wd-vv-module" pbflag="wc_0_大家都在看">
+                <div class="tt-bar">
+                    <a class="tt">大家都在看</a>
+                    <a class="mm">更多</a>
+                </div>
+                <div class="tele-v1-module cf">
+                    <div class="tele-v1-left cf">
+                        <div class="tvslide js-tvslide">
+                            <a class="tvslide-btn-l"></a>
+                            <a class="tvslide-btn-r"></a>
+                            <div class="tele-bw-item v1-big tvslide-item" style="display: block;">
+                                <a class="i">
+                                    <img src="./img/12.jpg" alt="大明风华">
+                                    <span class="p-cover"></span>
+                                    <i class="pi png-fix"></i>
+                                </a>
+                                <p class="nn">
+                                    <a>
+                                    大明风华
+                                    </a>
+                                </p>
+                                <p class="intr">汤唯朱亚文演绎大明传奇</p>
+                            </div> 
+                        </div>
+                        <div class="tele-bw-item mr">
+                            <a  class="i">
+                            <img src="./img/10.jpg" alt="极速救援">
+                            <span class="p-cover"></span>
+                            <i class="pi png-fix"></i>
+                            </a>
+                            <p class="nn">
+                                <a>极速救援</a>
+                            </p>
+                            <p class="intr">飞行医疗部绝境施救</p>
+                        </div>
+                        <div class="tele-bw-item ">
+                            <a  class="i">
+                            <img src="./img/9.jpg" alt="河山">
+                            <span class="p-cover"></span>
+                            <i class="pi png-fix"></i>
+                            </a>
+                            <p class="nn">
+                                <a>河山</a>
+                            </p>
+                            <p class="intr">王新军秦海璐卫国战争英雄谱</p>
+                        </div>
+                    </div>
+                    <div class="tele-v1-right">
+                        <div class="ww cf">
+                            <div class="tele-bw-item">
+                                <a  class="i">
+                                <img src="./img/13.jpg" alt="精英律师">
+                                <span class="p-cover"></span>
+                                <i class="pi png-fix"></i>
+                                </a>
+                                <p class="nn">
+                                    <a >精英律师</a>
+                                </p>
+                                <p class="intr">靳东蓝盈莹律政风云</p>
+                            </div>
+                            <div class="tele-bw-item">
+                                <a class="i">
+                                <img src="./img/20191216105900_681.jpg" alt="梦回">
+                                <span class="p-cover"></span>
+                                <i class="pi png-fix"></i>
+                                </a>
+                                <p class="nn">
+                                    <a>梦回</a>
+                                </p>
+                                <p class="intr">经典IP改编！跨时空秘恋</p>
+                            </div>                    
+                            <div class="tele-bw-item">
+                                <a class="i">
+                                <img src="./img/11.jpg" alt="澳门人家">
+                                <span class="p-cover"></span>
+                                <i class="pi png-fix"></i>
+                                </a>
+                                <p class="nn">
+                                    <a>澳门人家</a>
+                                </p>
+                                <p class="intr">任达华董洁演绎老街往事</p>
+                            </div>                     
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wd-right-container">
+            <div class="wd-right-m">
+                <div class="tt">卫视热播</div>
+                <ul class="tele-ws-list" pbflag="wc_0_卫视热播">
+                    <li class="cf">
+                        <span class="dot"></span>
+                        <a class="ws">北京卫视</a>
+                        <a  class="nn">河山</a>
+                    </li>
+                    <li class="cf">
+                        <span class="dot"></span>
+                        <a  class="ws">江苏卫视</a>
+                        <a  class="nn">空降利刃</a>
+                    </li>
+                    <li class="cf">
+                        <span class="dot"></span>
+                        <a class="ws">东方卫视</a>
+                        <a class="nn">第二次也很美</a>
+                    </li>
+                    <li class="cf">
+                        <span class="dot"></span>
+                        <a class="ws">江西卫视</a>
+                        <a class="nn">父母爱情</a>
+                    </li>
+                    <li class="cf">
+                        <span class="dot"></span>
+                        <a class="ws">广东卫视</a>
+                        <a class="nn">光荣时代</a>
+                    </li>
+                    <li class="cf">
+                        <span class="dot"></span>
+                        <a  class="ws">山东卫视</a>
+                        <a class="nn">激荡</a>
+                    </li>
+                    <li class="cf">
+                        <span class="dot"></span>
+                        <a class="ws">安徽卫视</a>
+                        <a class="nn">老虎队</a>
+                    </li>
+                    <li class="cf">
+                        <span class="dot"></span>
+                        <a class="ws">天津卫视</a>
+                        <a class="nn">欢喜盈门</a>
+                    </li>
+                    <li class="cf">
+                        <span class="dot"></span>
+                        <a  class="ws">吉林卫视</a>
+                        <a class="nn">红鲨突击</a>
+                    </li>
+                    <li class="cf">
+                        <span class="dot"></span>
+                        <a  class="ws">东方卫视</a>
+                        <a class="nn">在远方</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 明星 -->
+            <div class="wd-right-m" pbflag="wc_0_明星推荐">
+                <div class="tt">明星推荐</div>
+                <a class="change png-fix">换一换</a>
+                <div class="star-wrp">
+                    <div class="sw cf">
+                        <a>
+                            <img src="./img/8.jpg" alt="王凯">
+                            <span class="st-bg"></span><span class="st-name">王凯</span>
+                        </a>
+                        <a>
+                            <img src="./img/6.jpg" alt="杨洋">
+                            <span class="st-bg"></span><span class="st-name">杨洋</span>
+                        </a>
+                        <a>
+                            <img src="./img/7.jpg" alt="李易峰">
+                            <span class="st-bg"></span><span class="st-name">李易峰</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+    <script type="text/javascript">
+        window.onload = function(){
+          console.log("onload")
+          var box = document.getElementById('box')
+          var oNavlist = document.getElementById('nav').children
+          var slider = document.getElementById('slider')
+          var left = document.getElementById('left')
+          var right = document.getElementById('right')
+          var index = 1
+    
+          var isMoving = false
+          function next(){
+            console.log(isMoving)
+            if(!isMoving){
+              isMoving = true
+              index++
+              navChange()
+              animate(slider,{left:-1200*index},function(){
+                if(index === 6){
+                  slider.style.left = "-1200px"
+                  index = 1
+                }
+                isMoving = false
+              })
+              console.log(index)
+            }
+          }
+          function prev(){
+            if(!isMoving){
+              isMoving = true
+              index--
+              navChange()
+              animate(slider,{left:-1200*index},function(){
+                if(index === 0){
+                  slider.style.left = "-6000px"
+                  index = 5
+                }
+                isMoving = false
+              })
+              console.log(index)
+            }
+          }
+          var timer = setInterval(next,3000)
+          box.onmouseover = function(){
+            animate(left,{opacity:50})
+            animate(right,{opacity:50})
+            clearInterval(timer)
+          }
+          box.onmouseout = function(){
+            animate(left,{opacity:0})
+            animate(right,{opacity:0})
+            timer = setInterval(next,3000)
+          }
+    
+          right.onclick = ()=>{index = index===6?1:index++;next()}
+          left.onclick = ()=>{index = index===0?5:index++;prev()}
+    
+          console.log(oNavlist)
+          for(var i=0;i<oNavlist.length;i++){
+            oNavlist[i].idx = i
+            oNavlist[i].onclick = function(){
+              console.log(this.idx)
+              index = this.idx +1
+              navChange()
+              animate(slider,{left:-1200*index})
+            }
+          }
+    
+          function navChange(){
+            let sub=index==6?1:index==0?5:index
+            for(var i=0;i<oNavlist.length;i++){
+              let sup=i==5?1:i
+              oNavlist[sup].className = "";
+            }
+            oNavlist[sub-1].className = 'active'
+          }
+        }
+    </script>
+</html>
